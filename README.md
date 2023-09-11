@@ -1,24 +1,51 @@
-# bun starter
+# bun-plugin-proto
 
-## Getting Started
+Adds support for .proto imports in Bun.
 
-Click the [Use this template](https://github.com/wobsoriano/bun-lib-starter/generate) button to create a new repository with the contents starter.
-
-OR
-
-Run `bun create wobsoriano/bun-lib-starter ./my-lib`.
-
-## Setup
+## Installation
 
 ```bash
-# install dependencies
-bun install
+bun add bun-plugin-proto -d
+```
 
-# test the app
-bun test
+## Bundler usage
 
-# build the app, available under dist
-bun run build
+```ts
+import proto from "bun-plugin-proto";
+
+Bun.build({
+  // other config
+  plugins: [
+    proto()
+  ],
+});
+```
+
+In your sources you can now import proto files
+
+```ts
+import packageDefinition from './file.proto'
+
+console.log(packageDefinition)
+```
+
+The contents of the packageDefinition will be inlined into your bundle.
+
+## Runtime usage
+
+To use as a runtime plugin, create a file that registers the plugin:
+
+```ts
+// proto.ts
+import proto from 'bun-plugin-proto'
+
+Bun.plugin(proto({}));
+```
+
+Then preload it in your `bunfig.toml`:
+
+```toml
+preload = ['./proto.ts']
 ```
 
 ## License
