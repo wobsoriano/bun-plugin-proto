@@ -1,0 +1,33 @@
+{
+  "name": "bun-plugin-proto",
+  "version": "0.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "description": "Adds support for .proto imports in Bun.",
+  "scripts": {
+    "build": "bun run build.mjs",
+    "prepublishOnly": "bun run build"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "bun"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/wobsoriano/bun-plugin-proto#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wobsoriano/bun-plugin-proto.git"
+  },
+  "bugs": "https://github.com/wobsoriano/bun-plugin-proto/issues",
+  "author": "Robert Soriano <sorianorobertc@gmail.com>",
+  "devDependencies": {
+    "bun-plugin-dts": "^0.1.0",
+    "bun-types": "^1.0.1",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "@grpc/proto-loader": "^0.7.9"
+  }
+}
