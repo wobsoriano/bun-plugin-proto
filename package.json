@@ -6,7 +6,8 @@
   "description": "Adds support for .proto imports in Bun.",
   "scripts": {
     "build": "bun run build.mjs",
-    "prepublishOnly": "bun run build"
+    "prepublishOnly": "bun run build",
+    "release": "bumpp && npm publish"
   },
   "files": [
     "dist"
@@ -23,6 +24,7 @@
   "bugs": "https://github.com/wobsoriano/bun-plugin-proto/issues",
   "author": "Robert Soriano <sorianorobertc@gmail.com>",
   "devDependencies": {
+    "bumpp": "^9.2.0",
     "bun-plugin-dts": "^0.1.0",
     "bun-types": "^1.0.1",
     "typescript": "^5.1.6"
